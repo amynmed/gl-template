@@ -1,13 +1,12 @@
 
 
 #include <iostream>
-#include <chrono>
 
 #define GLFW_INCLUDE_NONE
-#include <glad/gl.h>
 #include <GLFW/glfw3.h>
+#include <glad/gl.h>
 
-#define TITLE   "renderer"
+#define TITLE   "gl-template"
 
 #define WIDTH   800
 #define HEIGHT  600
@@ -15,10 +14,6 @@
 
 int main()
 {
-
-        std::chrono::high_resolution_clock clk;
-
-
 
         glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);

@@ -3,17 +3,17 @@
 cmake_minimum_required(VERSION 3.10)
 
 #       Change accordingly
-set(CMAKE_C_COMPILER "C:/msys64/ucrt64/bin/gcc.exe")
+set(CMAKE_C_COMPILER   "C:/msys64/ucrt64/bin/gcc.exe")
 set(CMAKE_CXX_COMPILER "C:/msys64/ucrt64/bin/g++.exe")
 
 
-project(renderer)
+project(template)
 
 #       ==================================================
 #       SOURCE_DIRS   ====================================
 #       ==================================================
 
-# Some sources are irrelevant depending on the current OS
+# Some sources may be irrelevant depending on the current OS
 set(GLFW_SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/glfw)
 
 set(GLAD_SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/glad/cmake)
@@ -48,11 +48,11 @@ find_package(OpenGL REQUIRED)
 #       INCLUDE_DIRS   ==================================
 #       =================================================    
 
-set(INCLUDE_DIR include)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 
-set(GLFW_INCLUDE_DIR /include/glfw/include)
+set(GLFW_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include/glfw/include)
 
-set(GLM_INCLUDE_DIR /include/glm/include)
+set(GLM_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include/glm)
 
 
 #       ==================================================
@@ -71,12 +71,3 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIR} ${GLFW_INCLUDE
 target_sources(${PROJECT_NAME} PRIVATE ${SOURCE_FILES})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC glad_gl_core_mx_46 glfw)
-
-#target_link_directories(${PROJECT_NAME} PRIVATE ${LIB_DIRS})
-
-
-
-
-
-
-
